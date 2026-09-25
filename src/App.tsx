@@ -1,14 +1,16 @@
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import Banner from "./components/hero/Banner";
+import bannerImage from "./assets/banner-stack.png";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="">
       <Navbar />
 
       {/* Page Content */}
-      <main className="text-center mt-12 px-4">
-        <h1 className="text-3xl font-bold text-gray-900">Hello world!</h1>
+      <main className="">
+        <Banner bannerImage={bannerImage} />
       </main>
       <Footer />
     </div>

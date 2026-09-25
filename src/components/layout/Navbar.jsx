@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-white border-b border-gray-100 px-4 sm:px-8 py-3 font-sans">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container mx-auto px-2 md:px-4 lg:px-0 flex items-center justify-between">
         {/* Left Section: Mobile Menu Button (Flex Left on Mobile) */}
         <div className="flex-1 md:flex-none flex items-center justify-start">
           <button

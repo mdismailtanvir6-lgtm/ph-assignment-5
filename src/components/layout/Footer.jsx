@@ -46,7 +46,7 @@ const FOOTER_DATA = {
 export const Footer = () => {
   return (
     <footer className="w-full bg-white text-slate-600 border-t border-slate-100 font-sans">
-      <div className="max-w-6xl mx-auto px-6 pt-12 pb-8">
+      <div className="container mx-auto pt-12 pb-8">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start text-center md:text-left gap-8 md:gap-12 pb-12">
           

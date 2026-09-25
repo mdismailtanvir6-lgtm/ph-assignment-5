@@ -1,22 +1,9 @@
 import React from "react";
 import { RxCross1 } from "react-icons/rx";
 
-export const YourStack = ({
-  items = [],
-  onRemoveItem,
-  onRemoveAll,
-}) => {
-  const handleRemove = (id) => {
-    onRemoveItem(id);
-  };
-
-  const handleClearAll = () => {
-    onRemoveAll();
-  };
-
+export const YourStack = ({ items = [], onRemoveItem, onRemoveAll }) => {
   return (
-    <div className="rounded-2xl border border-[#f1f5f9] bg-white p-7 font-sans shadow-xs">
-
+    <div className="rounded-2xl border border-[#f1f5f9] bg-white p-7 font-sans shadow-[0_4px_25px_rgba(0,0,0,0.03)]">
       {/* Header */}
       <div>
         <h3 className="text-[22px] font-bold tracking-tight text-[#0f172a]">
@@ -36,7 +23,6 @@ export const YourStack = ({
             className="flex items-center justify-between rounded-2xl border border-[#e2e8f0]/60 bg-white px-4 py-3.5 transition-all duration-150 hover:border-[#cbd5e1]"
           >
             <div className="flex items-center space-x-3.5">
-              
               {/* Icon */}
               <div className="flex h-9 w-9 shrink-0 items-center justify-center">
                 {item.icon && (
@@ -62,7 +48,7 @@ export const YourStack = ({
 
             {/* Remove */}
             <button
-              onClick={() => handleRemove(item.id)}
+              onClick={() => onRemoveItem(item.id)}
               className="cursor-pointer p-1 text-[#94a3b8] transition-colors hover:text-[#64748b]"
               aria-label={`Remove ${item.name}`}
             >
@@ -84,8 +70,8 @@ export const YourStack = ({
       {/* Remove All */}
       {items.length > 0 && (
         <button
-          onClick={handleClearAll}
-          className="mt-6 w-full rounded-xl border border-[#fca5a5]/60 bg-white py-3.5 text-[15px] font-bold text-[#dc2626] transition-all duration-150 hover:bg-[#fef2f2] active:scale-[0.98] cursor-pointer"
+          onClick={onRemoveAll}
+          className="mt-6 w-full rounded-2xl border border-[#fca5a5]/60 bg-white py-3.5 text-[15px] font-bold text-[#dc2626] transition-all duration-150 hover:bg-[#fef2f2] active:scale-[0.98]"
         >
           Remove All
         </button>

@@ -1,21 +1,37 @@
 import React from "react";
 import { IoStar } from "react-icons/io5";
 
-const TechnologyCard = ({ technologies, isAdded, onAddToStack }) => {
-  const { name, description, category, difficulty, rating, icon, badge } =
-    technologies;
+const TechnologyCard = ({
+  technologies,
+  isAdded,
+  onAddToStack,
+}) => {
+  const {
+    name,
+    description,
+    category,
+    difficulty,
+    rating,
+    icon,
+    badge,
+  } = technologies;
 
   const handleClick = () => {
     onAddToStack(technologies);
   };
 
   return (
-    <div className="rounded-[28px] border border-[#f0f3f6] bg-white p-7 font-sans shadow-xs transition-shadow duration-200 hover:shadow-sm">
-      {/* Icon & Badge */}
+    <div className="rounded-[28px] border border-[#f0f3f6] bg-white p-7 font-sans shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-shadow duration-200 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+      
+      {/* Icon + Badge */}
       <div className="flex items-center justify-between">
         <div className="flex h-10 w-10 items-center justify-center">
           {icon && (
-            <img src={icon} alt={name} className="h-10 w-10 object-contain" />
+            <img
+              src={icon}
+              alt={name}
+              className="h-10 w-10 object-contain"
+            />
           )}
         </div>
 
@@ -26,7 +42,7 @@ const TechnologyCard = ({ technologies, isAdded, onAddToStack }) => {
         )}
       </div>
 
-      {/* Title & Description */}
+      {/* Content */}
       <div className="mt-5">
         <h3 className="text-[22px] font-bold tracking-tight text-[#0f172a]">
           {name}
@@ -37,7 +53,7 @@ const TechnologyCard = ({ technologies, isAdded, onAddToStack }) => {
         </p>
       </div>
 
-      {/* Details */}
+      {/* Meta */}
       <div className="mt-7 flex items-center justify-between">
         <span className="rounded-lg bg-[#f1f5f9] px-3 py-1.5 text-[13px] font-medium text-[#475569]">
           {category}
@@ -61,10 +77,9 @@ const TechnologyCard = ({ technologies, isAdded, onAddToStack }) => {
       {/* Add Button */}
       <button
         onClick={handleClick}
-        disabled={isAdded}
         className={`mt-6 w-full rounded-2xl py-2.5 text-[15px] font-semibold transition-all duration-150 active:scale-[0.98] ${
           isAdded
-            ? "cursor-not-allowed bg-[#10b981] text-white"
+            ? "bg-[#10b981] text-white hover:bg-[#059669]"
             : "bg-[#090d16] text-white hover:bg-[#1e293b]"
         }`}
       >
